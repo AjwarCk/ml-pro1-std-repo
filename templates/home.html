@@ -1,0 +1,107 @@
+<html> <!-- Start of HTML document -->
+<body> <!-- Start of the body section -->
+    <div class="login"> <!-- Container div with class "login" for styling the login area -->
+       <h1>Student Exam Performance Indicator</h1> <!-- Main heading for the page -->
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post"> <!-- Form element that submits data to the 'predict_datapoint' route using POST method -->
+        <h1> <!-- Start of a header for the form -->
+            <legend>Student Exam Performance Prediction</legend> <!-- Form legend/title displayed as part of the header -->
+        </h1> <!-- End of the header -->
+        <div class="mb-3"> <!-- Div container with margin-bottom for spacing -->
+            <label class="form-label">Gender</label> <!-- Label for the Gender field -->
+            <select class="form-control" name="gender" placeholder="Enter your Gender" required> <!-- Dropdown select for Gender; required field -->
+                <option class="placeholder" selected disabled value="">Select your Gender</option> <!-- Placeholder option for Gender -->
+                <option value="male">
+                    Male <!-- Option for male gender -->
+                </option>
+                <option value="female">
+                    Female <!-- Option for female gender -->
+                </option>
+            </select> <!-- End of Gender select -->
+        </div> <!-- End of Gender form group -->
+        <div class="mb-3"> <!-- Div container for Race or Ethnicity field -->
+            <label class="form-label">Race or Ethnicity</label> <!-- Label for Race or Ethnicity field -->
+            <select class="form-control" name="ethnicity" placeholder="Enter your ethnicity" required> <!-- Dropdown select for Ethnicity; required field -->
+                <option class="placeholder" selected disabled value="">Select Ethnicity</option> <!-- Placeholder option for Ethnicity -->
+                <option value="group A">
+                    Group A <!-- Option for Group A -->
+                </option>
+                <option value="group B">
+                    Group B <!-- Option for Group B -->
+                </option>
+                <option value="group C">
+                    Group C <!-- Option for Group C -->
+                </option>
+                <option value="group D">
+                    Group D <!-- Option for Group D -->
+                </option>
+                <option value="group E">
+                    Group E <!-- Option for Group E -->
+                </option>
+            </select> <!-- End of Ethnicity select -->
+        </div> <!-- End of Race or Ethnicity form group -->
+        <div class="mb-3"> <!-- Div container for Parental Level of Education field -->
+            <label class="form-label">Parental Level of Education</label> <!-- Label for Parental Level of Education -->
+            <select class="form-control" name="parental_level_of_education" placeholder="Enter your Parent Education" required> <!-- Dropdown select for Parental Education; required field -->
+                <option class="placeholder" selected disabled value="">Select Parent Education</option> <!-- Placeholder option for Parental Education -->
+                <option value="associate's degree">
+                    associate's degree <!-- Option for associate's degree -->
+                </option>
+                <option value="bachelor's degree">
+                    bachelor's degree <!-- Option for bachelor's degree -->
+                </option>
+                <option value="high school">
+                    high school <!-- Option for high school -->
+                </option>
+                <option value="master's degree">
+                    master's degree <!-- Option for master's degree -->
+                </option>
+                <option value="some college">
+                    some college <!-- Option for some college -->
+                </option>
+                <option value="some high school">
+                    some high school <!-- Option for some high school -->
+                </option>
+            </select> <!-- End of Parental Education select -->
+        </div> <!-- End of Parental Level of Education form group -->
+        <div class="mb-3"> <!-- Div container for Lunch Type field -->
+            <label class="form-label">Lunch Type</label> <!-- Label for Lunch Type -->
+            <select class="form-control" name="lunch" placeholder="Enter your Lunch" required> <!-- Dropdown select for Lunch Type; required field -->
+                <option class="placeholder" selected disabled value="">Select Lunch Type</option> <!-- Placeholder option for Lunch Type -->
+                <option value="free/reduced">
+                    free/reduced <!-- Option for free/reduced lunch -->
+                </option>
+                <option value="standard">
+                    standard <!-- Option for standard lunch -->
+                </option>
+            </select> <!-- End of Lunch Type select -->
+        </div> <!-- End of Lunch Type form group -->
+        <div class="mb-3"> <!-- Div container for Test Preparation Course field -->
+            <label class="form-label">Test Preparation Course</label> <!-- Label for Test Preparation Course -->
+            <select class="form-control" name="test_preparation_course" placeholder="Enter your Course" required> <!-- Dropdown select for Test Preparation Course; required field -->
+                <option class="placeholder" selected disabled value="">Select Test Course</option> <!-- Placeholder option for Test Preparation Course -->
+                <option value="none">
+                    None <!-- Option indicating no test preparation course -->
+                </option>
+                <option value="completed">
+                    Completed <!-- Option indicating test preparation course is completed -->
+                </option>
+            </select> <!-- End of Test Preparation Course select -->
+        </div> <!-- End of Test Preparation Course form group -->
+        <div class="mb-3"> <!-- Div container for Writing Score field -->
+            <label class="form-label">Writing Score out of 100</label> <!-- Label for Writing Score -->
+            <input class="form-control" type="number" name="writing_score" placeholder="Enter your Writing Score" min="0" max="100" /> <!-- Number input for Writing Score with range from 0 to 100 -->
+        </div> <!-- End of Writing Score form group -->
+        <div class="mb-3"> <!-- Div container for Reading Score field -->
+            <label class="form-label">Reading Score out of 100</label> <!-- Label for Reading Score -->
+            <input class="form-control" type="number" name="reading_score" placeholder="Enter your Reading Score" min="0" max="100" /> <!-- Number input for Reading Score with range from 0 to 100 -->
+        </div> <!-- End of Reading Score form group -->
+        <div class="mb-3"> <!-- Div container for the submit button -->
+            <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required /> <!-- Submit button with primary styling -->
+        </div> <!-- End of submit button container -->
+    </form> <!-- End of the form element -->
+    <h2>
+       The Prediction Of Maths Score Is: {{results}} <!-- Display the prediction result passed from the backend in an H2 element -->
+    </h2>
+   </body> <!-- Proper closing tag for the body section -->
+</html> <!-- End of HTML document -->
