@@ -40,4 +40,4 @@ def predict_datapoint():  # Define the view function to handle prediction reques
         return render_template('home.html', results=results[0])  # Render 'home.html' and pass the first prediction result to the template
 
 if __name__ == "__main__":  # Check if this script is executed as the main program (not imported as a module)
-    app.run(host="0.0.0.0", debug=True)  # Run the Flask app on all available network interfaces with debug mode enabled
+    app.run(host="0.0.0.0")  # Run the Flask app on all available network interfaces without debug mode enabled
