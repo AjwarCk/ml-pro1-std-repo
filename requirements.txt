@@ -4,8 +4,8 @@ seaborn
 matplotlib
 #ipykernel
 scikit-learn
-catboost
-xgboost
+#catboost
+#xgboost
 dill
 Flask==2.2.2
 #-e .
