@@ -2,7 +2,7 @@ numpy
 pandas
 seaborn
 matplotlib
-ipykernel
+#ipykernel
 scikit-learn
 catboost
 xgboost
